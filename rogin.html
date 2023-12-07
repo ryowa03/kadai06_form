@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+</head>
+<body>
+
+
+    <br>
+    <h3>質問先の部署選択</h3>
+        
+    <br>
+    
+    <select id="departmentSelect" onchange="redirectToPostPage()">
+    
+        <option value=""></option>
+        <option value="人事部">人事部</option>
+        <option value="経理部">経理部</option>
+        <option value="総務部">総務部</option>
+        <option value="営業部">営業部</option>
+        <option value="生産部">生産部</option>
+        <option value="情報システム部">情報システム部</option> 
+</select> 
+
+
+<script>
+    function redirectToPostPage() {
+
+        var selectBox = document.getElementById("departmentSelect");
+        var selectedDepartment = selectBox.options[selectBox.selectedIndex].value;
+    
+        // 選択された部署が空でない場合のみ遷移
+        if (selectedDepartment !== "") {
+
+            var url = "http://localhost/gs_code/kadai06/post.php";
+            window.location.href = url;
+        }
+    }
+    </script>
+
+
+    
+</body>
+</html>
